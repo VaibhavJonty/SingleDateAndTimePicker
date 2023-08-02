@@ -2,7 +2,7 @@ package com.github.florent37.singledateandtimepicker.widget;
 
 public class SingleDateAndTimeConstants {
     public static final int MIN_HOUR_DEFAULT = 0;
-    public static final int MAX_HOUR_DEFAULT = 167;
+    public static final int MAX_HOUR_DEFAULT = 23;
     public static final int MAX_HOUR_AM_PM = 12;
     public static final int STEP_HOURS_DEFAULT = 1;
 
@@ -14,4 +14,7 @@ public class SingleDateAndTimeConstants {
 
     public static final int MIN_YEAR_DIFF = 150;
     public static final int MAX_YEAR_DIFF = 100;
+
+    public static final int MIN_HOUR_WEEK_DEFAULT = 0;
+    public static final int MAX_HOUR_WEEK_DEFAULT = 167;
 }
