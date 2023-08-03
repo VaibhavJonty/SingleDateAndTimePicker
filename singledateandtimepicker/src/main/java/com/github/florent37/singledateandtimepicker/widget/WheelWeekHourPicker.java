@@ -12,7 +12,7 @@ import androidx.annotation.NonNull;
 
 import static com.github.florent37.singledateandtimepicker.widget.SingleDateAndTimeConstants.MAX_HOUR_AM_PM;
 import static com.github.florent37.singledateandtimepicker.widget.SingleDateAndTimeConstants.MAX_HOUR_WEEK_DEFAULT;
-import static com.github.florent37.singledateandtimepicker.widget.SingleDateAndTimeConstants.MIN_HOUR_DEFAULT;
+import static com.github.florent37.singledateandtimepicker.widget.SingleDateAndTimeConstants.MIN_HOUR_WEEK_DEFAULT;
 import static com.github.florent37.singledateandtimepicker.widget.SingleDateAndTimeConstants.STEP_HOURS_DEFAULT;
 
 public class WheelWeekHourPicker extends WheelPicker<String> {
@@ -25,18 +25,18 @@ public class WheelWeekHourPicker extends WheelPicker<String> {
     private FinishedLoopListener finishedLoopListener;
     private OnHourChangedListener hourChangedListener;
 
-    public WheelHourPicker(Context context) {
+    public WheelWeekHourPicker(Context context) {
         super(context);
     }
 
-    public WheelHourPicker(Context context, AttributeSet attrs) {
+    public WheelWeekHourPicker(Context context, AttributeSet attrs) {
         super(context, attrs);
     }
 
     @Override
     protected void init() {
         isAmPm = false;
-        minHour = MIN_HOUR_DEFAULT;
+        minHour = MIN_HOUR_WEEK_DEFAULT;
         maxHour = MAX_HOUR_WEEK_DEFAULT;
         hoursStep = STEP_HOURS_DEFAULT;
     }
@@ -113,21 +113,21 @@ public class WheelWeekHourPicker extends WheelPicker<String> {
     }
 
     public void setMaxHour(int maxHour) {
-        if (maxHour >= MIN_HOUR_DEFAULT && maxHour <= MAX_HOUR_WEEK_DEFAULT) {
+        if (maxHour >= MIN_HOUR_WEEK_DEFAULT && maxHour <= MAX_HOUR_WEEK_DEFAULT) {
             this.maxHour = maxHour;
         }
         notifyDatasetChanged();
     }
 
     public void setMinHour(int minHour) {
-        if (minHour >= MIN_HOUR_DEFAULT && minHour <= MAX_HOUR_WEEK_DEFAULT) {
+        if (minHour >= MIN_HOUR_WEEK_DEFAULT && minHour <= MAX_HOUR_WEEK_DEFAULT) {
             this.minHour = minHour;
         }
         notifyDatasetChanged();
     }
 
     public void setStepSizeHours(int hoursStep) {
-        if (hoursStep >= MIN_HOUR_DEFAULT && hoursStep <= MAX_HOUR_WEEK_DEFAULT) {
+        if (hoursStep >= MIN_HOUR_WEEK_DEFAULT && hoursStep <= MAX_HOUR_WEEK_DEFAULT) {
             this.hoursStep = hoursStep;
         }
         notifyDatasetChanged();
@@ -160,12 +160,12 @@ public class WheelWeekHourPicker extends WheelPicker<String> {
         }
     }
 
-    public WheelHourPicker setOnFinishedLoopListener(FinishedLoopListener finishedLoopListener) {
+    public WheelWeekHourPicker setOnFinishedLoopListener(FinishedLoopListener finishedLoopListener) {
         this.finishedLoopListener = finishedLoopListener;
         return this;
     }
 
-    public WheelHourPicker setHourChangedListener(OnHourChangedListener hourChangedListener) {
+    public WheelWeekHourPicker setHourChangedListener(OnHourChangedListener hourChangedListener) {
         this.hourChangedListener = hourChangedListener;
         return this;
     }
@@ -179,10 +179,10 @@ public class WheelWeekHourPicker extends WheelPicker<String> {
     }
 
     public interface FinishedLoopListener {
-        void onFinishedLoop(WheelHourPicker picker);
+        void onFinishedLoop(WheelWeekHourPicker picker);
     }
 
     public interface OnHourChangedListener {
-        void onHourChanged(WheelHourPicker picker, int hour);
+        void onHourChanged(WheelWeekHourPicker picker, int hour);
     }
 }
